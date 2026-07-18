@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riyadhi | Data Analyst & Operations Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#0b0f19',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-400 overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-emerald-400 hover:text-emerald-300 transition-colors">
+                RIYADHI<span class="text-white">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-emerald-400 transition-colors">Tentang</a>
+                <a href="#skills" class="hover:text-emerald-400 transition-colors">Keahlian</a>
+                <a href="#projects" class="hover:text-emerald-400 transition-colors">Proyek</a>
+                <a href="#certifications" class="hover:text-emerald-400 transition-colors">Sertifikasi</a>
+                <a href="#contact" class="hover:text-emerald-400 transition-colors">Kontak</a>
+            </div>
+            <!-- Mobile Menu Button (Toggleable visual cue) -->
+            <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/35">
+                Hubungi Saya
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 md:py-32 overflow-hidden border-b border-slate-900">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.08),transparent_50%)]"></div>
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Hero Text -->
+            <div class="md:col-span-7 space-y-6 text-left">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold tracking-wide border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Tersedia untuk Peluang Karir</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Hi, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Riyadhi</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl font-semibold text-slate-300">
+                    Junior Data Analyst & Data Operations Specialist
+                </h2>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl">
+                    Sarjana Teknik Informatika dengan keahlian mendalam dalam pembersihan data (*data cleansing*), analisis data eksploratif (EDA), dan otomatisasi *internal tools* interaktif menggunakan Python, SQL, dan R.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#projects" class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 text-white font-medium px-6 py-3 rounded-xl transition-all flex items-center">
+                        Lihat Portofolio <i class="fa-solid fa-arrow-right ml-2 text-emerald-400 text-sm"></i>
+                    </a>
+                    <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all flex items-center shadow-lg shadow-emerald-500/20">
+                        Kontak Langsung <i class="fa-solid fa-envelope ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Profile Card (With GitHub Photo Integration) -->
+            <div class="md:col-span-5 relative group">
+                <div class="absolute inset-0 bg-emerald-500/10 rounded-2xl -rotate-3 group-hover:rotate-0 transition-transform duration-300 -z-10"></div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center space-y-4">
+                    <!-- Lingkaran Foto dengan overflow-hidden agar gambar melingkar sempurna -->
+                    <div class="w-28 h-28 bg-emerald-950 border-2 border-emerald-500/50 rounded-full overflow-hidden flex items-center justify-center mx-auto">
+                        <img src="https://github.com/Riyadhi12.png" alt="Riyadhi" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/10b981/ffffff?text=Riyadhi'">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Riyadhi</h3>
+                        <p class="text-sm text-slate-400">Bachelor of Information Technology</p>
+                    </div>
+                    <div class="h-px bg-slate-800 w-2/3 mx-auto"></div>
+                    <div class="flex justify-center space-x-6 text-slate-400 pt-2">
+                        <a href="https://github.com/Riyadhi12" target="_blank" class="hover:text-emerald-400 transition-colors" title="GitHub"><i class="fa-brands fa-github text-2xl"></i></a>
+                        <!-- Silakan ganti tanda # di bawah ini dengan link LinkedIn aslimu -->
+                        <a href="https://linkedin.com/in/username-linkedin-kamu" target="_blank" class="hover:text-emerald-400 transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                        <a href="mailto:mriyadhi914@gmail.com" class="hover:text-emerald-400 transition-colors" title="Email"><i class="fa-solid fa-envelope text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 border-b border-slate-900 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4 space-y-4">
+                    <h2 class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Tentang Saya</h2>
+                    <h3 class="text-3xl font-bold leading-tight">Profil Profesional</h3>
+                    <div class="h-1 w-12 bg-emerald-500 rounded"></div>
+                </div>
+                <div class="md:col-span-8 space-y-6 text-slate-300">
+                    <p class="leading-relaxed">
+                        Seorang Sarjana Teknik Informatika yang berfokus pada **Data Engineering, Business Intelligence, dan Pengolahan Data Operasional**. Memiliki pengalaman profesional sebagai Tutor Python & Analisis Data di lingkungan EdTech internasional, dengan keahlian mendalam dalam manipulasi master data, pembersihan data (*data cleansing*), serta penjaminan kualitas data (*quality assurance*).
+                    </p>
+                    <p class="leading-relaxed">
+                        Saya percaya bahwa data bukan sekadar tumpukan angka, melainkan kunci pembuka peluang pertumbuhan bisnis. Saya bersemangat membangun sistem pembersihan data otomatis untuk menghasilkan keputusan bisnis yang solid dan akurat.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-900">
+                            <h4 class="text-emerald-400 font-semibold mb-1"><i class="fa-solid fa-graduation-cap mr-2"></i> Pendidikan</h4>
+                            <p class="text-sm text-slate-400">S1 - Teknik Informatika</p>
+                        </div>
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-900">
+                            <h4 class="text-emerald-400 font-semibold mb-1"><i class="fa-solid fa-briefcase mr-2"></i> Fokus Karir</h4>
+                            <p class="text-sm text-slate-400">Data Analyst / Data Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-slate-900/20 border-b border-slate-900">
+        <div class="max-w-6xl mx-auto px-6 text-center space-y-12">
+            <div class="space-y-4">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Teknologi & Keahlian</h2>
+                <h3 class="text-3xl font-bold">Senjata Utama Analitik Saya</h3>
+                <div class="h-1 w-12 bg-emerald-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/40 transition-all duration-300">
+                    <i class="fa-solid fa-database text-4xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold text-lg">SQL</h4>
+                    <p class="text-xs text-slate-400 mt-2">Data Retrieval, Filtering, Joins, Multi-table Extraction</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/40 transition-all duration-300">
+                    <i class="fa-brands fa-python text-4xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold text-lg">Python (Pandas)</h4>
+                    <p class="text-xs text-slate-400 mt-2">Data Cleansing, Data Pipeline, Automation, EDA</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/40 transition-all duration-300">
+                    <span class="text-4xl font-extrabold text-emerald-400 block mb-4">R</span>
+                    <h4 class="font-bold text-lg">R Programming</h4>
+                    <p class="text-xs text-slate-400 mt-2">Statistical Computing, Regression Models, Time Series Forecasting</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/40 transition-all duration-300">
+                    <i class="fa-solid fa-chart-simple text-4xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold text-lg">Business Intelligence</h4>
+                    <p class="text-xs text-slate-400 mt-2">Streamlit Cloud Deployment, Plotly Charts, Dynamic Dashboards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 border-b border-slate-900 relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.04),transparent_50%)]"></div>
+        <div class="max-w-6xl mx-auto px-6 space-y-16 relative z-10">
+            <div class="space-y-4 text-center">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Portofolio Kerja</h2>
+                <h3 class="text-3xl font-bold">Proyek Dashboard Industri</h3>
+                <div class="h-1 w-12 bg-emerald-500 mx-auto rounded"></div>
+            </div>
+
+            <!-- Grid Proyek -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Proyek 1: Tambang -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 relative group">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase">Dashboard 1 • Live Cloud Database</span>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Streamlit</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">GSheets API</span>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold group-hover:text-emerald-400 transition-colors">Dashboard Manajemen Aset & Operasional Tambang</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Membangun sistem pemantauan dinamis dan otomatis untuk melacak pemeliharaan alat berat tambang dan sisa estimasi umur operasional ban secara langsung (*real-time*).
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 pt-2">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Arsitektur Data Cloud:** Menghubungkan Google Sheets API (Cloud Database) dengan visualisasi Streamlit.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Otomatisasi Laporan:** Memantau utilisasi unit dan menyusun jadwal servis rutin otomatis.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Keamanan TOML Secrets:** Mengamankan kredensial database server di platform cloud.</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 mt-6 border-t border-slate-800/60">
+                        <span class="text-xs text-slate-500 font-mono">Status: Live & Verified</span>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Riyadhi12" target="_blank" class="text-slate-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fa-brands fa-github mr-1.5 text-base"></i> Code</a>
+                            <a href="#" class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-semibold flex items-center">Live App <i class="fa-solid fa-up-right-from-square ml-1.5 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 2: Ritel (Data Analyst Focus) -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 relative group">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase">Dashboard 2 • Corporate Analytics</span>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Pandas</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Plotly</span>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold group-hover:text-emerald-400 transition-colors">Corporate Supply Chain & Retail Master Data Analytics</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Membangun pipa data pembersih otomatis (*Data QA*) untuk melacak performa operasional serta visualisasi manajemen inventaris korporat.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 pt-2">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Data Cleansing:** Pipa Pandas otomatis untuk mendeteksi anomali format dan memproses *missing values*.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Commercial Analytics:** Visualisasi interaktif Plotly untuk memetakan KPIs regional penjualan global.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Analisis ABC & Optimasi:** Sistem kalkulasi otomatis klasifikasi produk yang menyumbang 70% total omset.</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 mt-6 border-t border-slate-800/60">
+                        <span class="text-xs text-slate-500 font-mono">Status: Live & Verified</span>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Riyadhi12" target="_blank" class="text-slate-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fa-brands fa-github mr-1.5 text-base"></i> Code</a>
+                            <a href="#" class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-semibold flex items-center">Live App <i class="fa-solid fa-up-right-from-square ml-1.5 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 relative group">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase">Dashboard 1 • Live Cloud Database</span>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Streamlit</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">GSheets API</span>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold group-hover:text-emerald-400 transition-colors">Dashboard Manajemen Aset & Operasional Tambang</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Membangun sistem pemantauan dinamis dan otomatis untuk melacak pemeliharaan alat berat tambang dan sisa estimasi umur operasional ban secara langsung (*real-time*).
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 pt-2">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Arsitektur Data Cloud:** Menghubungkan Google Sheets API (Cloud Database) dengan visualisasi Streamlit.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Otomatisasi Laporan:** Memantau utilisasi unit dan menyusun jadwal servis rutin otomatis.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2"></i> <span>**Keamanan TOML Secrets:** Mengamankan kredensial database server di platform cloud.</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 mt-6 border-t border-slate-800/60">
+                        <span class="text-xs text-slate-500 font-mono">Status: Live & Verified</span>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Riyadhi12" target="_blank" class="text-slate-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fa-brands fa-github mr-1.5 text-base"></i> Code</a>
+                            <a href="#" class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-semibold flex items-center">Live App <i class="fa-solid fa-up-right-from-square ml-1.5 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 3: Teaser / Upcoming -->
+                <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-8 flex flex-col justify-between md:col-span-2 hover:border-emerald-500/20 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-500 tracking-wider uppercase">Proyek Mendatang (Tahap Perancangan)</span>
+                            <span class="text-xs bg-slate-950/60 text-slate-500 px-2.5 py-1 rounded border border-slate-900">Advanced SQL & ML</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-8 space-y-3">
+                                <h4 class="text-xl font-bold text-slate-300">E-Commerce Customer Cohort & RFM Segmentation Dashboard</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    Akan mengimplementasikan pengelompokan pelanggan menggunakan model **K-Means Clustering** di Python untuk membantu divisi Marketing merancang strategi pemasaran otomatis bagi pelanggan yang berisiko pergi (*At Risk*).
+                                </p>
+                            </div>
+                            <div class="md:col-span-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800 text-center space-y-2">
+                                <div class="text-lg font-bold text-emerald-400">Next Focus</div>
+                                <div class="text-xs text-slate-400">PostgreSQL, Scikit-Learn, Customer Retention Analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 bg-slate-900/20 border-b border-slate-900">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="space-y-4 text-center">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Kualifikasi Resmi</h2>
+                <h3 class="text-3xl font-bold">Sertifikasi Data Analytics & Data Science</h3>
+                <div class="h-1 w-12 bg-emerald-500 mx-auto rounded"></div>
+            </div>
+
+            <!-- Grid Sertifikasi -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Sertifikat 1: SQL -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-emerald-400 text-2xl"><i class="fa-solid fa-code"></i></div>
+                        <h4 class="font-bold text-base leading-snug">SQL for Data Analysis</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Menguasai relasional basis data, filter, kondisional dasar, serta instruksi *SQL Joins* untuk konsolidasi data tabel kompleks.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-emerald-500/80 font-mono mt-4 block"><i class="fa-solid fa-circle-check"></i> Verified Certificate</span>
+                </div>
+                
+                <!-- Sertifikat 2: Intro Analytics -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-emerald-400 text-2xl"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4 class="font-bold text-base leading-snug">Introduction to Data Analytics</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Memahami siklus hidup metodologi data, penanganan data tidak terstruktur, serta prinsip visualisasi data strategis untuk manajemen.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-emerald-500/80 font-mono mt-4 block"><i class="fa-solid fa-circle-check"></i> Verified Certificate</span>
+                </div>
+
+                <!-- Sertifikat 3: Intro Data Science -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-emerald-400 text-2xl"><i class="fa-solid fa-brain"></i></div>
+                        <h4 class="font-bold text-base leading-snug">Introduction to Data Science</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Mempelajari algoritma klasifikasi (Linear/Logistic Regression, Random Forest, Decision Tree) dan metrik evaluasi Confusion Matrix.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-emerald-500/80 font-mono mt-4 block"><i class="fa-solid fa-circle-check"></i> Verified Certificate</span>
+                </div>
+
+                <!-- Sertifikat 4: Data Science R -->
+                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-emerald-400 text-3xl font-extrabold leading-none">R</div>
+                        <h4 class="font-bold text-base leading-snug">Data Science with R Programming</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Menerapkan manipulasi data R, pemodelan statistik lanjutan, serta dasar analisis Time Series untuk peramalan tren bisnis.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-emerald-500/80 font-mono mt-4 block"><i class="fa-solid fa-circle-check"></i> Verified Certificate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900/30 border-t border-slate-900 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold">Mari Berdiskusi Lebih Jauh</h2>
+            <div class="h-1 w-20 bg-emerald-500 mx-auto rounded"></div>
+            <p class="text-slate-400 max-w-lg mx-auto">
+                Saya selalu terbuka untuk berdiskusi seputar peluang karir di bidang Data Analyst, Business Intelligence, atau kolaborasi proyek otomatisasi.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 pt-4 text-slate-300 text-sm md:text-base">
+                <!-- Email (Terbuka ke Email Riyadhi) -->
+                <a href="mailto:mriyadhi914@gmail.com" class="flex items-center hover:text-emerald-400 transition-colors">
+                    <i class="fa-solid fa-envelope text-emerald-500 mr-2 text-lg"></i> mriyadhi914@gmail.com
+                </a>
+                
+                <!-- WhatsApp (Silakan ganti nomor wa.me di bawah ini dengan nomormu sendiri secara berkala) -->
+                <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center hover:text-emerald-400 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-emerald-500 mr-2 text-lg"></i> WhatsApp
+                </a>
+                
+                <!-- LinkedIn (Silakan ganti link di bawah ini dengan tautan profil LinkedIn aslimu) -->
+                <a href="https://linkedin.com/in/username-linkedin-kamu" target="_blank" class="flex items-center hover:text-emerald-400 transition-colors">
+                    <i class="fa-brands fa-linkedin text-emerald-500 mr-2 text-lg"></i> LinkedIn
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/Riyadhi12" target="_blank" class="flex items-center hover:text-emerald-400 transition-colors">
+                    <i class="fa-brands fa-github text-emerald-500 mr-2 text-lg"></i> Riyadhi12
+                </a>
+                
+                <!-- Lokasi -->
+                <span class="flex items-center">
+                    <i class="fa-solid fa-location-dot text-emerald-500 mr-2 text-lg"></i> Jakarta, Indonesia
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-xs text-slate-600">
+        <div class="max-w-6xl mx-auto px-6">
+            <p>© 2026 Riyadhi. Dibuat dengan presisi tinggi untuk Portofolio Analisis Data.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
